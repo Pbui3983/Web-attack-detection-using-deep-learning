@@ -34,6 +34,7 @@ web-attack-detection/
 │
 ├── requirements.txt                  # Các thư viện cần thiết
 └── README.md                         # Tài liệu hướng dẫn
+```
 🧠 Mô hình & Giải thuật
 Dự án triển khai và so sánh hiệu năng của 5 kiến trúc mạng nơ-ron khác nhau. Dưới đây là chi tiết giải thuật và lý do sử dụng:
 
