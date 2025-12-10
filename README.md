@@ -1,37 +1,39 @@
-Web Attack Detection using Deep Learning
-Dự án này tập trung vào việc xây dựng và đánh giá các mô hình Học sâu (Deep Learning) để phát hiện các cuộc tấn công Web. Hệ thống sử dụng các kiến trúc mạng nơ-ron tiên tiến như CNN, LSTM, GRU, MLP và mô hình lai CNN-LSTM để phân loại các request độc hại dựa trên bộ dữ liệu (được cho là WEBIDS23 dựa trên tên file mô hình).
+W# Web Attack Detection using Deep Learning
 
-📂 Cấu trúc Dự án
-Dự án được tổ chức theo cấu trúc module hóa để dễ dàng quản lý và mở rộng:
+Dự án này tập trung vào việc xây dựng và đánh giá các mô hình **Học sâu (Deep Learning)** để phát hiện các cuộc tấn công Web. Hệ thống sử dụng các kiến trúc mạng nơ-ron tiên tiến như **CNN, LSTM, GRU, MLP** và mô hình lai **CNN-LSTM** để phân loại các request độc hại dựa trên bộ dữ liệu WEBIDS23.
+
+## 📂 Cấu trúc Dự án
+
+Cấu trúc thư mục được tổ chức module hóa để dễ quản lý:
+
+```text
 web-attack-detection/
-├── models/                         # Chứa các file mô hình đã huấn luyện (.h5)
+├── models/                           # Chứa các file mô hình đã huấn luyện (.h5)
 │   ├── cnn_webids23_model.h5
 │   ├── lstm_webids23_model.h5
 │   ├── gru_webids23_model.h5
 │   ├── mlp_webids23_model.h5
 │   └── cnn_lstm_webids23_model.h5
 │
-├── results/                        # Chứa kết quả đánh giá (Confusion Matrix, Training History)
+├── results/                          # Kết quả đánh giá (Confusion Matrix, History)
 │   ├── *_confusion_matrix.png
 │   └── *_train_history.png
 │
 ├── src/
-│   ├── preprocessing-src/          # Mã nguồn tiền xử lý dữ liệu
+│   ├── preprocessing-src/            # Mã nguồn tiền xử lý dữ liệu
 │   │   ├── preprocessed_data.ipynb
 │   │   └── preprocessed_data_2.ipynb
 │   │
-│   └── train-src/                  # Mã nguồn huấn luyện mô hình
+│   └── train-src/                    # Mã nguồn huấn luyện mô hình
 │       ├── train_cnn_balance.ipynb
 │       ├── train_lstm_balance.ipynb
 │       ├── train_gru_balance.ipynb
 │       ├── train_mlp_balance.ipynb
 │       ├── train_cnnlstm_balance.ipynb
-│       └── ... (các file thử nghiệm/unbalance khác)
+│       └── ...
 │
-├── requirements.txt                # Các thư viện cần thiết
-└── README.md                       # Tài liệu hướng dẫn
-
-
+├── requirements.txt                  # Các thư viện cần thiết
+└── README.md                         # Tài liệu hướng dẫn
 🧠 Mô hình & Giải thuật
 Dự án triển khai và so sánh hiệu năng của 5 kiến trúc mạng nơ-ron khác nhau. Dưới đây là chi tiết giải thuật và lý do sử dụng:
 
